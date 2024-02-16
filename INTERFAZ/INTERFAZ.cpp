@@ -12,5 +12,4 @@ int main(array<System::String^>^ args)
     Application::SetCompatibleTextRenderingDefault(false);
     INTERFAZ::UI form;
     Application::Run(% form);
-    //xd
 }
