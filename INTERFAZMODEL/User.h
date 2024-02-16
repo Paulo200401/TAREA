@@ -12,4 +12,7 @@ namespace  INTERFAZMODEL {
         String^ user;
         String^ password;
     };
+
 }
+
+

@@ -1,9 +1,11 @@
 #pragma once
 #include "pch.h"
+#include <string>
 using namespace System;
 using namespace INTERFAZMODEL;
 using namespace INTERFAZCONTROLLER;
 using namespace System::Collections::Generic;
+
 
 namespace INTERFAZ {
 
@@ -13,6 +15,7 @@ namespace INTERFAZ {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace std;
 
 	/// <summary>
 	/// Summary for UI
@@ -44,8 +47,10 @@ namespace INTERFAZ {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ txt_usuario;
+	private: System::Windows::Forms::TextBox^ txt_contrasena;
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
@@ -68,8 +73,8 @@ namespace INTERFAZ {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->txt_usuario = (gcnew System::Windows::Forms::TextBox());
+			this->txt_contrasena = (gcnew System::Windows::Forms::TextBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -115,19 +120,19 @@ namespace INTERFAZ {
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Contraseña";
 			// 
-			// textBox1
+			// txt_usuario
 			// 
-			this->textBox1->Location = System::Drawing::Point(192, 135);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(162, 22);
-			this->textBox1->TabIndex = 4;
+			this->txt_usuario->Location = System::Drawing::Point(192, 135);
+			this->txt_usuario->Name = L"txt_usuario";
+			this->txt_usuario->Size = System::Drawing::Size(162, 22);
+			this->txt_usuario->TabIndex = 4;
 			// 
-			// textBox2
+			// txt_contrasena
 			// 
-			this->textBox2->Location = System::Drawing::Point(192, 209);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(162, 22);
-			this->textBox2->TabIndex = 5;
+			this->txt_contrasena->Location = System::Drawing::Point(192, 209);
+			this->txt_contrasena->Name = L"txt_contrasena";
+			this->txt_contrasena->Size = System::Drawing::Size(162, 22);
+			this->txt_contrasena->TabIndex = 5;
 			// 
 			// pictureBox1
 			// 
@@ -146,14 +151,15 @@ namespace INTERFAZ {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(731, 428);
 			this->Controls->Add(this->pictureBox1);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->txt_contrasena);
+			this->Controls->Add(this->txt_usuario);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"UI";
 			this->Text = L"UI";
+			this->Load += gcnew System::EventHandler(this, &UI::UI_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -161,9 +167,41 @@ namespace INTERFAZ {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		User^ pedrismoFC = gcnew User();
+		pedrismoFC->name = "Pedro";
+		pedrismoFC->user = "PRD";
+		pedrismoFC->password = "123";
+
+		string usuario = this->toStandardString(this->txt_usuario->Text);
+		string contra = this->toStandardString(this->txt_contrasena->Text);
+		if ((toSystemString(usuario) == (pedrismoFC->user)) && (toSystemString(contra) == (pedrismoFC->password))) {
+			MessageBox::Show("Bienvenido " + this->toSystemString(usuario));
+
+		}
+		else {
+			MessageBox::Show("Incorrecto");
+		}
+
+	}
+
+	public: static string toStandardString(System::String^ string)
+	{
+		using System::Runtime::InteropServices::Marshal;
+		System::IntPtr pointer = Marshal::StringToHGlobalAnsi(string);
+		char* charPointer = reinterpret_cast<char*>(pointer.ToPointer());
+		std::string returnString(charPointer, string->Length);
+		Marshal::FreeHGlobal(pointer);
+		return returnString;
+
+	}
+
+	private: static String^ toSystemString(string str) {
+		return gcnew String(str.c_str());
 	}
 	
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void UI_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
