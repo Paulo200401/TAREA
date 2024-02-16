@@ -131,6 +131,9 @@
     <ClInclude Include="UI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="UICREATE.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -142,6 +145,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="UICREATE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -156,6 +160,9 @@
   <ItemGroup>
     <EmbeddedResource Include="UI.resx">
       <DependentUpon>UI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UICREATE.resx">
+      <DependentUpon>UICREATE.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
