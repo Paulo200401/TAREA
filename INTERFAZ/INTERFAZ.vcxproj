@@ -158,6 +158,11 @@
       <DependentUpon>UI.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTERFAZMODEL\INTERFAZMODEL.vcxproj">
+      <Project>{13cda8c4-c84a-44b9-ad5c-31390d922b9a}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

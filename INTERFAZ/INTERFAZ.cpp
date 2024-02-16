@@ -4,6 +4,7 @@
 using namespace System;
 using namespace System::Collections::Generic;
 using namespace System::Windows::Forms;
+using namespace INTERFAZMODEL;
 
 int main(array<System::String^>^ args)
 {

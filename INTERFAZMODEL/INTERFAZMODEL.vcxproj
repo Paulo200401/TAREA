@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{22E81E11-D131-4BD4-AA94-F6BC63A4E64C}</ProjectGuid>
+    <ProjectGuid>{13CDA8C4-C84A-44B9-AD5C-31390D922B9A}</ProjectGuid>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>INTERFAZMODEL</RootNamespace>
@@ -120,13 +120,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="User.h" />
-    <ClInclude Include="INTERFAZ_MODEL.h" />
+    <ClInclude Include="INTERFAZMODEL.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="INTERFAZ_MODEL.cpp" />
+    <ClCompile Include="INTERFAZMODEL.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

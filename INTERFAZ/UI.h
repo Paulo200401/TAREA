@@ -1,4 +1,9 @@
 #pragma once
+#include "pch.h"
+using namespace System;
+using namespace INTERFAZMODEL;
+//using namespace INTERFAZCONTROLLER;
+using namespace System::Collections::Generic;
 
 namespace INTERFAZ {
 
