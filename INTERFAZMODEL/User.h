@@ -5,7 +5,7 @@
 using namespace System;
 #pragma once
 
-namespace  INTERFAZ_MODEL {
+namespace  INTERFAZMODEL {
     public ref class User {
     public:
         String^ name;
