@@ -1,8 +1,14 @@
 #include "pch.h"
+#include "UI.h"
 
 using namespace System;
+using namespace System::Collections::Generic;
+using namespace System::Windows::Forms;
 
-int main(array<System::String ^> ^args)
+int main(array<System::String^>^ args)
 {
-    return 0;
+    Application::EnableVisualStyles();
+    Application::SetCompatibleTextRenderingDefault(false);
+    INTERFAZ::UI form;
+    Application::Run(% form);
 }
