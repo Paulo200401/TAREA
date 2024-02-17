@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <User>
-    <name>KanyeWest</name>
-    <user>pepito</user>
-    <password>pepito</password>
-  </User>
-  <User>
-    <name>KanyeWest</name>
-    <user>pepito</user>
-    <password>pepito</password>
+    <name>Gc</name>
+    <user>Gc</user>
+    <password>Gc</password>
   </User>
 </ArrayOfUser>
