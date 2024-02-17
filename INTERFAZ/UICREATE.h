@@ -1,4 +1,9 @@
 #pragma once
+#include "pch.h"
+using namespace System;
+using namespace	INTERFAZMODEL;
+using namespace INTERFAZCONTROLLER;
+using namespace System::Collections::Generic;
 
 namespace INTERFAZ {
 
@@ -123,6 +128,7 @@ namespace INTERFAZ {
 			this->button1->TabIndex = 6;
 			this->button1->Text = L"Crear";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &UICREATE::button1_Click);
 			// 
 			// UICREATE
 			// 
@@ -138,6 +144,7 @@ namespace INTERFAZ {
 			this->Controls->Add(this->label1);
 			this->Name = L"UICREATE";
 			this->Text = L"UICREATE";
+			this->Load += gcnew System::EventHandler(this, &UICREATE::UICREATE_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -147,5 +154,20 @@ namespace INTERFAZ {
 	}
 	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		//CREAR CLASE
+		List<User^>^ listuser = gcnew List<User^>();
+		User^ user = gcnew User();
+		user->name = textBox1->Text;
+		user->user = textBox2->Text;
+		user->password = textBox3->Text;
+		Controller::AddUser(user);
+		listuser = Controller::GetUser();
+	}
+private: System::Void UICREATE_Load(System::Object^ sender, System::EventArgs^ e) {
+	List<User^>^ listuser = gcnew List<User^>();
+	listuser = Controller::GetUser();
+
+}
+};
 }
