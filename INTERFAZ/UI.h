@@ -179,7 +179,7 @@ namespace INTERFAZ {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		User^ pedrismoFC = gcnew User();
 		pedrismoFC->name = "Pedro";
-		pedrismoFC->user = "PRD";
+		pedrismoFC->user = "PDR";
 		pedrismoFC->password = "123";
 
 		string usuario = this->toStandardString(this->txt_usuario->Text);
