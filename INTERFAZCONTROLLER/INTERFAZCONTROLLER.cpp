@@ -29,7 +29,7 @@ void INTERFAZCONTROLLER::Controller::LoadUser()
 {
 	try {
 		XmlSerializer^ reader = gcnew XmlSerializer(UserList->GetType());
-		StreamReader^ sr = gcnew StreamReader("User.xml");
+		StreamReader^ sr = gcnew StreamReader("Users.xml");
 		UserList = (List<User^>^)reader->Deserialize(sr);
 		sr->Close();
 	}
