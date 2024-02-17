@@ -6,7 +6,7 @@ using namespace System;
 using namespace INTERFAZMODEL;
 using namespace INTERFAZCONTROLLER;
 using namespace System::Collections::Generic;
-
+//Viva Kanye West
 
 namespace INTERFAZ {
 
@@ -152,7 +152,7 @@ namespace INTERFAZ {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 6;
 			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &UI::pictureBox1_Click);
+			//this->pictureBox1->Click += gcnew System::EventHandler(this, &UI::pictureBox1_Click);
 			// 
 			// UI
 			// 
@@ -176,24 +176,29 @@ namespace INTERFAZ {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		User^ pedrismoFC = gcnew User();
-		pedrismoFC->name = "Pedro";
-		pedrismoFC->user = "PDR";
-		pedrismoFC->password = "123";
-
-		string usuario = this->toStandardString(this->txt_usuario->Text);
-		string contra = this->toStandardString(this->txt_contrasena->Text);
-		if ((toSystemString(usuario) == (pedrismoFC->user)) && (toSystemString(contra) == (pedrismoFC->password))) {
-			MessageBox::Show("Bienvenido " + this->toSystemString(usuario));
-
-		}
-		else {
-			MessageBox::Show("Incorrecto");
-		}
-
+	private: System::Void UI_Load(System::Object^ sender, System::EventArgs^ e) {
+		List<User^>^ listuser = gcnew List<User^>();
+		listuser = Controller::GetUser();
 	}
 
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		int i;
+		int j = 0;
+		List<User^>^ listuser = gcnew List<User^>();
+		listuser = Controller::GetUser();
+		int number = listuser->Count - 1;
+
+		for (i = 0; i < number; i++) {
+			if (((txt_usuario->Text) == (listuser[number]->user)) && ((txt_contrasena->Text) == (listuser[number]->password))) {
+				MessageBox::Show("Bienvenido " + listuser[number]->name);
+				j = 1;
+				break;
+			}
+		}
+		if (j == 0) {
+			MessageBox::Show("Incorrecto");
+		}
+	}
 	public: static string toStandardString(System::String^ string)
 	{
 		using System::Runtime::InteropServices::Marshal;
@@ -208,16 +213,9 @@ namespace INTERFAZ {
 	private: static String^ toSystemString(string str) {
 		return gcnew String(str.c_str());
 	}
-	
-private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void UI_Load(System::Object^ sender, System::EventArgs^ e) {
-	List<User^>^ listuser = gcnew List<User^>();
-	listuser = Controller::GetUser();
-}
+
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	UICREATE^ UIForm = gcnew UICREATE();
-
 	UIForm->Show();
 }
 };

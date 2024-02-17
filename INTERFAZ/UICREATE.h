@@ -46,6 +46,7 @@ namespace INTERFAZ {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ confirmacion;
 	protected:
 
 	private:
@@ -68,6 +69,7 @@ namespace INTERFAZ {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->confirmacion = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -130,11 +132,21 @@ namespace INTERFAZ {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &UICREATE::button1_Click);
 			// 
+			// confirmacion
+			// 
+			this->confirmacion->AutoSize = true;
+			this->confirmacion->Location = System::Drawing::Point(205, 185);
+			this->confirmacion->Name = L"confirmacion";
+			this->confirmacion->Size = System::Drawing::Size(67, 13);
+			this->confirmacion->TabIndex = 7;
+			this->confirmacion->Text = L"";
+			// 
 			// UICREATE
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(347, 272);
+			this->Controls->Add(this->confirmacion);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->textBox2);
@@ -165,6 +177,7 @@ namespace INTERFAZ {
 		user->password = textBox3->Text;
 		Controller::AddUser(user);
 		listuser = Controller::GetUser();
+		this->confirmacion->Text = L"Usuario creado";
 	}
 };
 }
