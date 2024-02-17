@@ -13,7 +13,6 @@ namespace INTERFAZCONTROLLER {
 		static List<User^>^ UserList = gcnew List<User^>();
 
 	public:
-		static User^ Crear(User^, String^, String^, String^);
 		static int AddUser(User^);
 		static List<User^>^ GetUser();
 		static void PersistUser();

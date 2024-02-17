@@ -150,6 +150,8 @@ namespace INTERFAZ {
 
 		}
 #pragma endregion
+	private: System::Void UICREATE_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -164,10 +166,5 @@ namespace INTERFAZ {
 		Controller::AddUser(user);
 		listuser = Controller::GetUser();
 	}
-private: System::Void UICREATE_Load(System::Object^ sender, System::EventArgs^ e) {
-	List<User^>^ listuser = gcnew List<User^>();
-	listuser = Controller::GetUser();
-
-}
 };
 }

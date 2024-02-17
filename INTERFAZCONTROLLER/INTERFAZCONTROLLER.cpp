@@ -2,14 +2,6 @@
 
 #include "INTERFAZCONTROLLER.h"
 
-User^ INTERFAZCONTROLLER::Controller::Crear(User^ user_class, String^ name, String^ user, String^ password)
-{
-	user_class->user = user;
-	user_class->name = name;
-	user_class->password = password;
-	return user_class;
-}
-
 int INTERFAZCONTROLLER::Controller::AddUser(User^ user_class)
 {
 	UserList->Add(user_class);
