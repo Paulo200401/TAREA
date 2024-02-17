@@ -189,8 +189,8 @@ namespace INTERFAZ {
 		int number = listuser->Count - 1;
 
 		for (i = 0; i <= number; i++) {
-			if (((txt_usuario->Text) == (listuser[number]->user)) && ((txt_contrasena->Text) == (listuser[number]->password))) {
-				MessageBox::Show("Bienvenido " + listuser[number]->name);
+			if (((txt_usuario->Text) == (listuser[i]->user)) && ((txt_contrasena->Text) == (listuser[i]->password))) {
+				MessageBox::Show("Bienvenido " + listuser[i]->name);
 				j = 1;
 				break;
 			}

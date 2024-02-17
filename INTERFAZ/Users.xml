@@ -5,4 +5,24 @@
     <user>Fabio</user>
     <password>Fabio</password>
   </User>
+  <User>
+    <name>Gc</name>
+    <user>Gc</user>
+    <password>Gc</password>
+  </User>
+  <User>
+    <name>Mitsuki</name>
+    <user>Mitsuki</user>
+    <password>Mitsuki</password>
+  </User>
+  <User>
+    <name>Fabio</name>
+    <user>Fabio</user>
+    <password>Fabio</password>
+  </User>
+  <User>
+    <name>Gc</name>
+    <user>Gc</user>
+    <password>Gc</password>
+  </User>
 </ArrayOfUser>
